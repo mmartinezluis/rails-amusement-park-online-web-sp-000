@@ -1,0 +1,24 @@
+<%= render "users/error" %>
+<% if flash[:msg] %>
+  <%= flash[:msg] %>
+<% end %>
+
+<% if @user.admin == false %>
+  <h1>Hi, <%= @user.name %></h1><br>
+  <p>Mood: <%= @user.mood %></p><br>
+  <p>Height: <%= @user.height %></p><br>
+  <p>Happines: <%= @user.happiness %></p><br>
+  <p>Nausea: <%= @user.nausea %></p><br>
+  <p>Tickets: <%= @user.tickets %></p><br>
+<% else %>
+  <h2>ADMIN</h2>
+  <h1>Hi, <%= @user.name %></h1><br>
+<% end %>
+<br>
+
+<h3><%= link_to "See attractions", attractions_path %></h3>
+
+<%= link_to "Log Out", '/logout' %>
+
+
+

@@ -1,0 +1,8 @@
+<h1>Sing In</h1>
+<%= render 'users/error' %>
+<%= form_tag '/signin' do %>
+  <%= collection_select :user, :name, User.all, :name, :name, :include_blank =>true %><br>
+  <%= label_tag :password %><br>
+  <div id="password"><%= text_field_tag :password %><br></div>
+  <%= submit_tag "Sign In" %>
+<% end %>

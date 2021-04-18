@@ -1,0 +1,36 @@
+<h1>Sign Up</h1>
+
+<%= form_for @user do |f| %>
+  <%= render "error" %>
+
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  
+  <div id="password">
+  <%= f.label :password %><br>
+  <%= f.text_field :password %><br>
+  </div>
+
+  <%= f.label :height %><br>
+  <%= f.text_field :height %><br>
+  <label>Administrator?</label>
+  <%= f.radio_button :admin, false, :checked => true %>No
+  <%= f.radio_button :admin, true %>Yes
+  <br><br>
+  <label for="admin">Admin</label>
+
+  <br><br>
+  <%= f.label :happiness %><br>
+  <%= f.text_field :happiness %><br>
+  <%= f.label :nausea %><br>
+  <%= f.text_field :nausea %><br>
+  <%= f.label :tickets %><br>
+  <%= f.text_field :tickets %><br>
+  <br>
+  <%= f.label :admin %>
+  <%= f.check_box :admin %>
+  <br>
+  <%= f.submit %><br>
+<% end %>
+
+<%= link_to "Log In", signin_path %>

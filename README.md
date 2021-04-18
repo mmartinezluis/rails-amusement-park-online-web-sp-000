@@ -1,3 +1,14 @@
+<% if !@user.errors[:messages].empty? %>
+  <div id="error_explanation">
+    <h2>There were some errors:</h2>
+    <u;>
+      <% @user.errors[:messages].each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div> 
+<% end %>
+
 # Rails Amusement Park
 
 ## Objectives
