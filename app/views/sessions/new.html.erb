@@ -1,8 +1,13 @@
 <h1>Sing In</h1>
-<%= render 'users/error' %>
+
+<% if flash[:error] %>
+    <%= flash[:error] %>
+<% end %>
+  
 <%= form_tag '/signin' do %>
-  <%= collection_select :user, :name, User.all, :name, :name, :include_blank =>true %><br>
-  <%= label_tag :password %><br>
-  <div id="password"><%= text_field_tag :password %><br></div>
+  <%= label_tag :username %>
+  <%= collection_select :user, :name, User.all, :name, :name, :include_blank =>true %><br><br>
+  <%= label_tag :password %>
+  <%= text_field_tag :password %><br><br>
   <%= submit_tag "Sign In" %>
 <% end %>
