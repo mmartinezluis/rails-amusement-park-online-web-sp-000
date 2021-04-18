@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   post '/signin', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   resources :attractions, only: [:index, :new, :create, :show, :edit, :update]
-  get '/attractions/:id/ride', to: 'rides#create'
   resources :rides, only: [:create]
 end

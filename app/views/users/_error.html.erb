@@ -10,3 +10,11 @@
     </div>
   <% end %>
 <% end %>
+
+<% if flash[:message] %>
+  <ul>
+    <% flash[:message].each do |message| %>
+      <LI><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
